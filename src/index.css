@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-holo-cyan: #00D9FF;
+  --color-holo-blue: #0066FF;
+  --color-holo-dark: #03070D;
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 5px var(--color-holo-cyan), 0 0 10px var(--color-holo-blue);
+  }
+  .box-glow {
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.2), inset 0 0 10px rgba(0, 217, 255, 0.1);
+  }
+}
+
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.15)
+  );
+  background-size: 100% 3px;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.3;
+}
+
+.flicker {
+  animation: hologramFlicker 0.15s infinite;
+}
+
+@keyframes hologramFlicker {
+  0% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+.hud-panel {
+  background: rgba(3, 7, 13, 0.3);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(0, 217, 255, 0.15);
+  box-shadow: inset 0 0 10px rgba(0, 217, 255, 0.05);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix J.A.R.V.I.S. Hologram",
+  "description": "Interactive 3D Holographic Projection System featuring a dynamic feline model.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
